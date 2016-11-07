@@ -1,0 +1,26 @@
+<div ng-controller="ClassSignupController">
+  <fieldset>
+    <h2><legend>Class size</legend></h2>
+    <br>
+    <select ng-model="number" ng-options="number for number in size.range" ng-change="textbox()">
+      <br><br>
+      <option value="">Input class size</option>
+      <br>
+    </select>
+
+    <!-- TODO: REFACTOR form tag into nested view -->
+
+    <form name="studentSignup" ng-model="number" ng-show="showMe" ng-submit="submit()">
+      <div ng-repeat="textbox in textboxes track by $index">
+        <br>
+        <input type="text" ng-model="textbox.name" placeholder="Student {{ $index + 1 }}">
+        <br>
+      </div>
+
+      <!-- TODO: BUILD form validation -->
+      <br>
+      <button >Submit Student Roster</button>
+    </form>
+    </div>
+  </fieldset>
+</div>

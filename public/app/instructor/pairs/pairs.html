@@ -1,0 +1,19 @@
+<div ng-controller="PairsController">
+  <h2>{{ cohort }}</h2>
+  <br><br>
+  <table style="width:35%" ng-repeat="(sprint, array) in pairs">
+    <tr>
+      <th>{{ sprint }} Sprint</th>
+      <th>Partner 1</th>
+      <th>Partner 2</th>
+    </tr>
+    <tr ng-repeat="pair in array">
+      <td>
+        Pair {{ $index + 1 }}
+      </td>
+      <td ng-repeat="(key, value) in pair">
+        {{ key }}
+      </td>
+    </tr>
+  </table>
+</div>
